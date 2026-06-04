@@ -3,149 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earth and Moon Revolution</title>
+<title>Earth & Moon Revolution Simulation</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    body{
-        background:#000;
-        overflow:hidden;
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
+body{
+    background:#000;
+    color:white;
+    overflow:hidden;
+}
 
-    .space{
-        position:relative;
-        width:800px;
-        height:800px;
-    }
+header{
+    position:absolute;
+    top:0;
+    width:100%;
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.5);
+    z-index:10;
+}
 
-    /* Sun */
-    .sun{
-        position:absolute;
-        width:120px;
-        height:120px;
-        background:radial-gradient(circle, #ffff99, #ffcc00, #ff8800);
-        border-radius:50%;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        box-shadow:0 0 50px #ffcc00,
-                   0 0 100px #ff8800;
-    }
+header h1{
+    color:#ffd700;
+}
 
-    /* Earth's Orbit */
-    .earth-orbit{
-        position:absolute;
-        width:500px;
-        height:500px;
-        border:1px solid rgba(255,255,255,0.2);
-        border-radius:50%;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        animation:earthRevolve 20s linear infinite;
-    }
+.info{
+    position:absolute;
+    left:20px;
+    top:100px;
+    width:280px;
+    padding:20px;
+    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+    backdrop-filter:blur(5px);
+    z-index:10;
+}
 
-    /* Earth */
-    .earth{
-        position:absolute;
-        width:50px;
-        height:50px;
-        background:radial-gradient(circle at 30% 30%, #66ccff, #0066ff);
-        border-radius:50%;
-        top:50%;
-        left:100%;
-        transform:translate(-50%, -50%);
-        box-shadow:0 0 15px #00aaff;
-    }
+.info h2{
+    margin-bottom:10px;
+    color:#00aaff;
+}
 
-    /* Moon Orbit */
-    .moon-orbit{
-        position:absolute;
-        width:120px;
-        height:120px;
-        border:1px solid rgba(255,255,255,0.15);
-        border-radius:50%;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        animation:moonRevolve 4s linear infinite;
-    }
+.space{
+    width:100vw;
+    height:100vh;
+    position:relative;
+}
 
-    /* Moon */
-    .moon{
-        position:absolute;
-        width:16px;
-        height:16px;
-        background:#ddd;
-        border-radius:50%;
-        top:50%;
-        left:100%;
-        transform:translate(-50%, -50%);
-        box-shadow:0 0 8px #fff;
-    }
+.sun{
+    position:absolute;
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ffff99,#ffaa00,#ff6600);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 50px orange,
+               0 0 100px gold;
+}
 
-    @keyframes earthRevolve{
-        from{
-            transform:translate(-50%, -50%) rotate(0deg);
-        }
-        to{
-            transform:translate(-50%, -50%) rotate(360deg);
-        }
-    }
+.earth-orbit{
+    position:absolute;
+    width:600px;
+    height:600px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    animation:earthOrbit 20s linear infinite;
+}
 
-    @keyframes moonRevolve{
-        from{
-            transform:translate(-50%, -50%) rotate(0deg);
-        }
-        to{
-            transform:translate(-50%, -50%) rotate(360deg);
-        }
-    }
+.earth{
+    position:absolute;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:radial-gradient(circle,#7dd3fc,#2563eb);
+    top:50%;
+    left:100%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 20px #2196f3;
+}
 
-    .stars{
-        position:absolute;
-        width:100%;
-        height:100%;
-        background:
-            radial-gradient(2px 2px at 20% 30%, white, transparent),
-            radial-gradient(2px 2px at 70% 20%, white, transparent),
-            radial-gradient(1px 1px at 40% 80%, white, transparent),
-            radial-gradient(2px 2px at 85% 70%, white, transparent),
-            radial-gradient(1px 1px at 10% 60%, white, transparent),
-            radial-gradient(2px 2px at 60% 50%, white, transparent),
-            radial-gradient(1px 1px at 90% 10%, white, transparent);
+.moon-orbit{
+    position:absolute;
+    width:120px;
+    height:120px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    animation:moonOrbit 4s linear infinite;
+}
+
+.moon{
+    position:absolute;
+    width:16px;
+    height:16px;
+    border-radius:50%;
+    background:#ddd;
+    top:50%;
+    left:100%;
+    transform:translate(-50%,-50%);
+    box-shadow:0 0 8px white;
+}
+
+@keyframes earthOrbit{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
     }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+@keyframes moonOrbit{
+    from{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform:translate(-50%,-50%) rotate(360deg);
+    }
+}
+
+.star{
+    position:absolute;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;}
+    to{opacity:1;}
+}
+
+footer{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    color:#aaa;
+}
 </style>
 </head>
-
 <body>
 
-<div class="stars"></div>
+<header>
+    <h1>Earth Around Sun & Moon Around Earth</h1>
+    <p>Interactive Solar System Demonstration</p>
+</header>
 
-<div class="space">
+<div class="info">
+    <h2>About</h2>
+    <p>
+        Earth revolves around the Sun while the Moon revolves around Earth.
+        This simulation demonstrates both motions simultaneously.
+    </p>
+</div>
+
+<div class="space" id="space">
 
     <div class="sun"></div>
 
     <div class="earth-orbit">
         <div class="earth">
-
             <div class="moon-orbit">
                 <div class="moon"></div>
             </div>
-
         </div>
     </div>
 
 </div>
 
+<footer>
+    Created with HTML, CSS and JavaScript
+</footer>
+
+<script>
+const space = document.getElementById("space");
+
+for(let i=0;i<300;i++){
+    const star = document.createElement("div");
+    star.className = "star";
+
+    const size = Math.random()*3 + 1;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.left = Math.random()*100 + "%";
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDelay = Math.random()*2 + "s";
+
+    space.appendChild(star);
+}
+</script>
+
 </body>
-  </html>
+</html>
