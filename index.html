@@ -3,210 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Earth & Moon Revolution Simulation</title>
+<title>Happy Bestie Day Priyansha ❤️</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#000;
-    color:white;
-    overflow:hidden;
-}
-
-header{
-    position:absolute;
-    top:0;
-    width:100%;
-    text-align:center;
-    padding:20px;
-    background:rgba(0,0,0,0.5);
-    z-index:10;
-}
-
-header h1{
-    color:#ffd700;
-}
-
-.info{
-    position:absolute;
-    left:20px;
-    top:100px;
-    width:280px;
-    padding:20px;
-    background:rgba(255,255,255,0.08);
-    border-radius:12px;
-    backdrop-filter:blur(5px);
-    z-index:10;
-}
-
-.info h2{
-    margin-bottom:10px;
-    color:#00aaff;
-}
-
-.space{
-    width:100vw;
     height:100vh;
-    position:relative;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff4e50,#fc913a,#ff6fd8,#3813c2);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
 }
 
-.sun{
-    position:absolute;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    background:radial-gradient(circle,#ffff99,#ffaa00,#ff6600);
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    box-shadow:0 0 50px orange,
-               0 0 100px gold;
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-.earth-orbit{
-    position:absolute;
-    width:600px;
-    height:600px;
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    animation:earthOrbit 20s linear infinite;
-}
-
-.earth{
-    position:absolute;
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:radial-gradient(circle,#7dd3fc,#2563eb);
-    top:50%;
-    left:100%;
-    transform:translate(-50%,-50%);
-    box-shadow:0 0 20px #2196f3;
-}
-
-.moon-orbit{
-    position:absolute;
-    width:120px;
-    height:120px;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    animation:moonOrbit 4s linear infinite;
-}
-
-.moon{
-    position:absolute;
-    width:16px;
-    height:16px;
-    border-radius:50%;
-    background:#ddd;
-    top:50%;
-    left:100%;
-    transform:translate(-50%,-50%);
-    box-shadow:0 0 8px white;
-}
-
-@keyframes earthOrbit{
-    from{
-        transform:translate(-50%,-50%) rotate(0deg);
-    }
-    to{
-        transform:translate(-50%,-50%) rotate(360deg);
-    }
-}
-
-@keyframes moonOrbit{
-    from{
-        transform:translate(-50%,-50%) rotate(0deg);
-    }
-    to{
-        transform:translate(-50%,-50%) rotate(360deg);
-    }
-}
-
-.star{
-    position:absolute;
-    background:white;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
-}
-
-@keyframes twinkle{
-    from{opacity:.2;}
-    to{opacity:1;}
-}
-
-footer{
-    position:absolute;
-    bottom:10px;
-    width:100%;
+.card{
+    width:90%;
+    max-width:700px;
+    padding:40px;
     text-align:center;
-    color:#aaa;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.15);
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,0.3);
+    box-shadow:0 0 40px rgba(255,255,255,0.2);
+    color:white;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
+
+h1{
+    font-size:3rem;
+    text-shadow:0 0 20px #fff;
+    margin-bottom:15px;
+}
+
+.bestie{
+    color:#ffe600;
+    text-shadow:0 0 25px #ffe600;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin:20px 0;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#fff;
+    color:#ff1493;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+#message{
+    margin-top:25px;
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#fff;
+}
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:25px;
+    animation:rise linear infinite;
+    opacity:.8;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:1;
+    }
 }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Earth Around Sun & Moon Around Earth</h1>
-    <p>Interactive Solar System Demonstration</p>
-</header>
+<div class="card">
+    <h1>🌸 Happy Bestie Day 🌸</h1>
 
-<div class="info">
-    <h2>About</h2>
+    <h2 class="bestie">Priyansha ❤️</h2>
+
     <p>
-        Earth revolves around the Sun while the Moon revolves around Earth.
-        This simulation demonstrates both motions simultaneously.
+        Some friends become family, some become memories,
+        but a few become priceless treasures.
+        <br><br>
+        Thank you for all the laughter, support,
+        crazy moments and beautiful memories.
+        <br><br>
+        You are truly one of the most amazing people in my life.
     </p>
+
+    <button class="btn" onclick="showMessage()">
+        Click for a Surprise 🎁
+    </button>
+
+    <div id="message"></div>
 </div>
-
-<div class="space" id="space">
-
-    <div class="sun"></div>
-
-    <div class="earth-orbit">
-        <div class="earth">
-            <div class="moon-orbit">
-                <div class="moon"></div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<footer>
-    Created with HTML, CSS and JavaScript
-</footer>
 
 <script>
-const space = document.getElementById("space");
+function showMessage(){
+    document.getElementById("message").innerHTML =
+    "💖 Priyansha, you are not just my best friend, you are my forever favorite person. Happy Bestie Day! 💖";
+}
 
-for(let i=0;i<300;i++){
-    const star = document.createElement("div");
-    star.className = "star";
-
-    const size = Math.random()*3 + 1;
-
-    star.style.width = size + "px";
-    star.style.height = size + "px";
-
-    star.style.left = Math.random()*100 + "%";
-    star.style.top = Math.random()*100 + "%";
-
-    star.style.animationDelay = Math.random()*2 + "s";
-
-    space.appendChild(star);
+for(let i=0;i<35;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(4+Math.random()*6)+"s";
+    heart.style.fontSize=(15+Math.random()*30)+"px";
+    document.body.appendChild(heart);
 }
 </script>
 
