@@ -3,272 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
+<title>Beautiful Bouquet</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Segoe UI,sans-serif;
-}
-
 body{
+margin:0;
 height:100vh;
-overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffd1ff,#ffe9d6);
-animation:bg 10s ease infinite alternate;
-}
-
-@keyframes bg{
-0%{filter:hue-rotate(0deg);}
-100%{filter:hue-rotate(25deg);}
+overflow:hidden;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffe0ec,#ffd7c2,#e8d5ff);
 }
 
 .container{
-position:relative;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
+text-align:center;
+animation:float 4s ease-in-out infinite;
+}
+
+img{
+width:320px;
+max-width:90%;
+filter:drop-shadow(0 15px 25px rgba(0,0,0,.25));
 }
 
 h1{
-position:absolute;
-top:30px;
 color:white;
 font-size:42px;
-text-shadow:0 0 15px hotpink;
-animation:fade 2s;
+text-shadow:0 0 10px hotpink;
 }
 
-p{
-position:absolute;
-top:95px;
-color:white;
-font-size:20px;
-text-align:center;
-text-shadow:0 0 10px black;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(-30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* Bouquet */
-
-.bouquet{
-position:relative;
-width:420px;
-height:520px;
-}
-
-/* Flowers */
-
-.flower{
-position:absolute;
-width:90px;
-height:90px;
-animation:float 3s ease-in-out infinite;
-}
-
-.center{
-position:absolute;
-left:35px;
-top:35px;
-width:20px;
-height:20px;
-background:gold;
-border-radius:50%;
-z-index:5;
-box-shadow:0 0 20px gold;
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-12px);}
 }
 
 .petal{
 position:absolute;
-width:32px;
-height:48px;
-background:radial-gradient(circle,#ffb6d9,#ff005d);
-border-radius:50%;
+font-size:24px;
+animation:fall linear infinite;
 }
 
-.p1{top:0;left:29px;}
-.p2{top:22px;left:58px;transform:rotate(90deg);}
-.p3{top:45px;left:29px;}
-.p4{top:22px;left:0;transform:rotate(90deg);}
-.p5{top:8px;left:8px;transform:rotate(-45deg);}
-.p6{top:8px;left:50px;transform:rotate(45deg);}
-.p7{top:40px;left:8px;transform:rotate(45deg);}
-.p8{top:40px;left:50px;transform:rotate(-45deg);}
-
-.stem{
-position:absolute;
-left:43px;
-top:65px;
-width:5px;
-height:160px;
-background:#228b22;
+@keyframes fall{
+from{transform:translateY(-50px);}
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
 }
-
-.leaf1{
-position:absolute;
-width:40px;
-height:20px;
-background:#2ecc71;
-top:120px;
-left:8px;
-border-radius:100% 0;
-transform:rotate(-35deg);
 }
-
-.leaf2{
-position:absolute;
-width:40px;
-height:20px;
-background:#2ecc71;
-top:150px;
-left:42px;
-border-radius:100% 0;
-transform:rotate(145deg);
-}
-
-.f1{left:160px;top:20px;}
-.f2{left:95px;top:80px;}
-.f3{left:225px;top:80px;}
-.f4{left:55px;top:170px;}
-.f5{left:160px;top:150px;}
-.f6{left:265px;top:170px;}
-.f7{left:105px;top:250px;}
-.f8{left:215px;top:250px;}
-.f9{left:160px;top:300px;}
-
-.ribbon{
-position:absolute;
-bottom:25px;
-left:120px;
-width:180px;
-height:190px;
-background:linear-gradient(#f6deb5,#dca96d);
-clip-path:polygon(10% 0%,90% 0%,100% 100%,0% 100%);
-box-shadow:0 15px 25px rgba(0,0,0,.3);
-}
-
-.bow{
-position:absolute;
-bottom:195px;
-left:
-    </style>
+</style>
 </head>
 
 <body>
 
 <div class="container">
+<h1>💐 Just For You 💐</h1>
 
-<h1>🌹 Just For You 🌹</h1>
+<img src="bouquet.png" alt="Bouquet">
 
-<p>
-Every flower in this bouquet carries a smile,<br>
-and together they bloom into something beautiful.
-</p>
-
-<div class="bouquet">
-
-<!-- Flower 1 -->
-<div class="flower f1">
-<div class="petal p1"></div><div class="petal p2"></div>
-<div class="petal p3"></div><div class="petal p4"></div>
-<div class="petal p5"></div><div class="petal p6"></div>
-<div class="petal p7"></div><div class="petal p8"></div>
-<div class="center"></div>
-<div class="stem"></div>
-<div class="leaf1"></div>
-<div class="leaf2"></div>
 </div>
 
-<!-- Flower 2 -->
-<div class="flower f2">
-<div class="petal p1"></div><div class="petal p2"></div>
-<div class="petal p3"></div><div class="petal p4"></div>
-<div class="petal p5"></div><
-                                <style>
-.sparkle{
-position:absolute;
-font-size:22px;
-animation:twinkle 2s infinite ease-in-out;
-pointer-events:none;
-}
-
-@keyframes twinkle{
-0%,100%{
-opacity:.3;
-transform:scale(.7);
-}
-50%{
-opacity:1;
-transform:scale(1.4);
-}
-}
-
-.petal-fall{
-position:absolute;
-top:-40px;
-font-size:22px;
-animation:fall linear infinite;
-pointer-events:none;
-}
-
-@keyframes fall{
-0%{
-transform:translateY(-40px) rotate(0deg);
-opacity:1;
-}
-100%{
-transform:translateY(110vh) translateX(60px) rotate(360deg);
-opacity:0;
-}
-}
-</style>
-
 <script>
-
-const colors=["🌸","🌹","🌺","💮","🌷"];
-
-for(let i=0;i<30;i++){
+for(let i=0;i<40;i++){
 
 let p=document.createElement("div");
 
-p.className="petal-fall";
+p.className="petal";
 
-p.innerHTML=colors[Math.floor(Math.random()*colors.length)];
+p.innerHTML="🌸";
 
 p.style.left=Math.random()*100+"vw";
 
-p.style.animationDuration=(5+Math.random()*6)+"s";
+p.style.animationDuration=(4+Math.random()*6)+"s";
 
-p.style.animationDelay=(Math.random()*5)+"s";
-
-p.style.fontSize=(18+Math.random()*18)+"px";
+p.style.animationDelay=Math.random()*5+"s";
 
 document.body.appendChild(p);
 
 }
-
 </script>
-
-</div>
 
 </body>
 </html>
