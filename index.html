@@ -1,55 +1,84 @@
 <!DOCTYPE html>
-<html>
-   <head>
-    <title>Top Site</title>
-   </head>
- <body>
-    <h1>Formatting Tags</h1>
-<p>This is Paragraph tag</p>
-<br>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Bouquet For You 💐</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-  <!--Comment tag-->
-  <b>This text is bold</b>
-  <br>
-  <i>This text is italic</i>
-  <br>
-  <u>This text is underlined</u>
- <br>
-  <big>This text is big</big>
-  <br>
-  <small>This text is Small</small>
-    <br>
-This application is only acceptable up to <del>2025</del>
-2026.
-  <br>
-  We write water as H<sub>2</sub>O.
-  <br>
-  We Know that 6<sup>2</sup>=36
-  <hr size="10px" color="#808000" align="left">
- <h2>Ordered List</h2>   
-   <ol>
-      <li>Tokyo</li>
-<li>Rio</li>
-<li>Berlin</li>
-   </ol>
-<h2>Ordered List Type="a"</h2>
-    <ol type="a">
-       <li>Denver</li>
-<li>Stockholm</li>
-<li>Oslo</li>
-    </ol>
-    <h2>Unordered list type circle</h2>
-    <ul type="circle">
-       <li>Nirobi</li>
-        <li>Palermo</li>
-<li>marselia</li>
-    </ul>
-    <hr color="black">
-    <h3>Definition List</h3>
-    <Dl>
-       <Dt>Science
-          <dd>Science is the systematic evidence
-    </Dl>
- </body>
-</html>
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#fbc2eb);
+    font-family:'Segoe UI',sans-serif;
+}
+
+.container{
+    position:relative;
+    text-align:center;
+}
+
+.message{
+    position:absolute;
+    top:-120px;
+    width:100%;
+    color:white;
+    text-shadow:0 0 10px rgba(0,0,0,.3);
+    animation:fade 2s ease;
+}
+
+.message h1{
+    font-size:42px;
+}
+
+.message p{
+    font-size:20px;
+    margin-top:10px;
+}
+
+.bouquet{
+    position:relative;
+    width:320px;
+    height:450px;
+}
+
+.flower{
+    position:absolute;
+    animation:float 3s ease-in-out infinite;
+}
+
+.center{
+    width:28px;
+    height:28px;
+    background:gold;
+    border-radius:50%;
+    position:absolute;
+    left:36px;
+    top:36px;
+    z-index:2;
+    box-shadow:0 0 20px gold;
+}
+
+.petal{
+    width:38px;
+    height:55px;
+    background:radial-gradient(circle,#ffb6d9,#ff2d75);
+    border-radius:50%;
+    position:absolute;
+}
+
+.p1{top:0;left:35px;}
+.p2{top:35px;left:70px;transform:rotate(90deg);}
+.p3{top:70px;left:35px;}
+.p4{top:35px;left:0;transform:rotate(90deg);}
+.p5{top:12px;left:10px;transform:rotate(-45deg);}
+.p6{top:12px;left:60
