@@ -1,31 +1,41 @@
 <html>
 <head>
 <style type="text/css">
-a:link {
-    color: #FF0000;
-}
+a.one:link {color: #ff0000}
+a.one:visited {color: #0000ff}
+a.one:hover {color: #ffcc00}
 
-a:visited {
-    color: #00FF00;
-}
+a.two:link {color: #ff0000}
+a.two:visited {color: #0000ff}
+a.two:hover {font-size: 150%}
 
-a:hover {
-    color: #FF00FF;
-}
+a.three:link {color: #ff0000}
+a.three:visited {color: #0000ff}
+a.three:hover {background: #66ff66}
 
-a:active {
-    color: #0000FF;
-}
+a.four:link {color: #ff0000}
+a.four:visited {color: #0000ff}
+a.four:hover {font-family: monospace}
+
+a.five:link {color: #ff0000; text-decoration: none}
+a.five:visited {color: #0000ff; text-decoration: none}
+a.five:hover {text-decoration: underline}
 </style>
 </head>
 
 <body>
 
-<p><b><a href="index.htm" target="_blank">This is a link</a></b></p>
+<p>Mouse over the links to see them change layout.</p>
 
-<p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective!</p>
+<p><b><a class="one" href="index.htm" target="_blank">This link changes color</a></b></p>
 
-<p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective!</p>
+<p><b><a class="two" href="index.htm" target="_blank">This link changes font-size</a></b></p>
+
+<p><b><a class="three" href="index.htm" target="_blank">This link changes background-color</a></b></p>
+
+<p><b><a class="four" href="index.htm" target="_blank">This link changes font-family</a></b></p>
+
+<p><b><a class="five" href="index.htm" target="_blank">This link changes text-decoration</a></b></p>
 
 </body>
 </html>
