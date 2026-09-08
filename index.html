@@ -1,88 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Beautiful Bouquet</title>
-
-<style>
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-overflow:hidden;
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ffe0ec,#ffd7c2,#e8d5ff);
+<style type="text/css">
+a:link {
+    color: #FF0000;
 }
 
-.container{
-text-align:center;
-animation:float 4s ease-in-out infinite;
+a:visited {
+    color: #00FF00;
 }
 
-img{
-width:320px;
-max-width:90%;
-filter:drop-shadow(0 15px 25px rgba(0,0,0,.25));
+a:hover {
+    color: #FF00FF;
 }
 
-h1{
-color:white;
-font-size:42px;
-text-shadow:0 0 10px hotpink;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-}
-
-.petal{
-position:absolute;
-font-size:24px;
-animation:fall linear infinite;
-}
-
-@keyframes fall{
-from{transform:translateY(-50px);}
-to{
-transform:translateY(110vh) rotate(360deg);
-opacity:0;
-}
+a:active {
+    color: #0000FF;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<h1>💐 Just For You 💐</h1>
+<p><b><a href="index.htm" target="_blank">This is a link</a></b></p>
 
-<img src="bouquet.png" alt="Bouquet">
+<p><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective!</p>
 
-</div>
-
-<script>
-for(let i=0;i<40;i++){
-
-let p=document.createElement("div");
-
-p.className="petal";
-
-p.innerHTML="🌸";
-
-p.style.left=Math.random()*100+"vw";
-
-p.style.animationDuration=(4+Math.random()*6)+"s";
-
-p.style.animationDelay=Math.random()*5+"s";
-
-document.body.appendChild(p);
-
-}
-</script>
+<p><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective!</p>
 
 </body>
 </html>
